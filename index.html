@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Páginas web para pymes, comercios y emprendimientos. Despegando tu web empieza en Córdoba: contame tu idea y la charlamos.">
+    <meta name="theme-color" content="#123B73">
+    <title>Despegando tu web | Páginas web en Córdoba</title>
+
+    <link rel="icon" href="/Img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F1F7FD',
+                            100: '#DDEEFF',
+                            200: '#C6E1FA',
+                            300: '#9CC9F5',
+                            600: '#2D6FB7',
+                            700: '#1E5AA8',
+                            800: '#174B86',
+                            900: '#123B73',
+                            950: '#0B2340'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+        body { font-family: "DM Sans", sans-serif; }
+        h1, h2, h3 { font-family: "Manrope", sans-serif; }
+        .mobile-menu-open { display: block; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-950">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            <a href="#inicio" class="shrink-0" aria-label="Despegando tu web, ir al inicio">
+                <img
+                    src="/Img/Despegando%20tu%20web_%20logo%20azul.png"
+                    alt="Despegando tu web"
+                    width="180"
+                    class="w-36 sm:w-44"
+                >
+            </a>
+
+            <nav class="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex" aria-label="Navegación principal">
+                <a href="#inicio" class="transition hover:text-brand-700">Inicio</a>
+                <a href="#servicios" class="transition hover:text-brand-700">Servicios</a>
+                <a href="#proceso" class="transition hover:text-brand-700">Cómo trabajo</a>
+                <a href="#preguntas" class="transition hover:text-brand-700">Preguntas</a>
+                <a href="#contacto" class="transition hover:text-brand-700">Contacto</a>
+            </nav>
+
+            <a
+                href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hidden items-center gap-2 rounded-xl bg-brand-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-950 sm:flex"
+            >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Escribime
+            </a>
+
+            <button
+                id="mobile-menu-btn"
+                type="button"
+                class="rounded-lg p-2 text-xl text-brand-900 hover:bg-brand-50 lg:hidden"
+                aria-label="Abrir menú"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-5 py-3 lg:hidden" aria-label="Navegación móvil">
+            <a href="#inicio" class="mobile-link block py-2 font-semibold text-slate-700">Inicio</a>
+            <a href="#servicios" class="mobile-link block py-2 font-semibold text-slate-700">Servicios</a>
+            <a href="#proceso" class="mobile-link block py-2 font-semibold text-slate-700">Cómo trabajamos</a>
+            <a href="#preguntas" class="mobile-link block py-2 font-semibold text-slate-700">Preguntas</a>
+            <a href="#contacto" class="mobile-link block py-2 font-semibold text-slate-700">Contacto</a>
+            <a
+                href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-2 flex items-center justify-center gap-2 rounded-xl bg-brand-900 px-4 py-3 font-bold text-white"
+            >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                Escribinos por WhatsApp
+            </a>
+        </nav>
+    </header>
+
+    <main id="inicio" class="pt-20">
+        <section class="bg-gradient-to-b from-brand-50 to-white px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+            <div class="mx-auto max-w-5xl text-center">
+                <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-semibold text-brand-900">
+                    <i class="fa-solid fa-location-dot text-brand-700" aria-hidden="true"></i>
+                    Córdoba, Argentina
+                </p>
+
+                <h1 class="mx-auto max-w-4xl font-display text-4xl font-extrabold leading-tight tracking-tight text-brand-950 sm:text-5xl lg:text-6xl">
+                    Una página web clara para mostrar lo que hacés
+                </h1>
+
+                <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                    Estamos empezando con Despegando tu web y quiero ayudar a pymes,
+                    comercios y emprendimientos a tener su espacio en internet.
+                    Si tenés una idea, contame y vemos cómo encararla.
+                </p>
+
+                <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                    <a
+                        href="#contacto"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-700 px-6 py-3.5 font-bold text-white shadow-lg shadow-brand-900/15 transition hover:-translate-y-0.5 hover:bg-brand-900"
+                    >
+                        Contanos tu idea
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href="#servicios"
+                        class="inline-flex items-center justify-center rounded-xl border border-brand-200 bg-white px-6 py-3.5 font-bold text-brand-900 transition hover:bg-brand-50"
+                    >
+                        Ver servicios
+                    </a>
+                </div>
+
+                <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm text-slate-600">
+                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Páginas para negocios</span>
+                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Landing pages</span>
+                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Diseño adaptable</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Servicios</p>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+                        ¿Qué tipo de página necesitás?
+                    </h2>
+                    <p class="mt-4 leading-7 text-slate-600">
+                        Cada negocio tiene algo distinto para contar. Podemos empezar
+                        por una web sencilla y definir juntos qué secciones hacen falta.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid gap-5 md:grid-cols-3">
+                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                            <i class="fa-regular fa-window-maximize" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Página para tu negocio</h3>
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Un lugar para contar qué ofrecés, mostrar tus datos y facilitar
+                            que tus clientes se pongan en contacto.
+                        </p>
+                    </article>
+
+                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Landing page</h3>
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Una página enfocada en presentar un servicio, producto,
+                            promoción o evento.
+                        </p>
+                    </article>
+
+                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Diseño adaptable</h3>
+                        <p class="mt-3 leading-7 text-slate-600">
+                            La página se prepara para que se pueda leer y recorrer desde
+                            el celular, la tablet o la computadora.
+                        </p>
+                    </article>
+                </div>
+
+                <p class="mt-6 text-sm text-slate-500">
+                    ¿Tenés otra idea? Escribinos y vemos juntos qué alcance puede tener.
+                </p>
+            </div>
+        </section>
+
+        <section id="proceso" class="bg-brand-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Cómo trabajo</p>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+                        Primero hablamos; después, lo ponemos en marcha
+                    </h2>
+                    <p class="mt-4 leading-7 text-slate-600">
+                        La idea es que sepas qué incluye el proyecto, cuánto cuesta y
+                        cuáles son los pasos antes de empezar.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid gap-5 md:grid-cols-3">
+                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
+                        <span class="text-sm font-extrabold text-brand-600">01</span>
+                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Me contás qué necesitás</h3>
+                        <p class="mt-2 leading-7 text-slate-600">
+                            Hablamos de tu negocio, qué querés mostrar y qué te gustaría
+                            que puedan hacer quienes visiten la página.
+                        </p>
+                    </article>
+
+                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
+                        <span class="text-sm font-extrabold text-brand-600">02</span>
+                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Definimos el proyecto</h3>
+                        <p class="mt-2 leading-7 text-slate-600">
+                            Acordamos las secciones, el contenido, el presupuesto y el
+                            plazo antes de arrancar.
+                        </p>
+                    </article>
+
+                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
+                        <span class="text-sm font-extrabold text-brand-600">03</span>
+                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Revisamos la página</h3>
+                        <p class="mt-2 leading-7 text-slate-600">
+                            Te compartimos el avance para que revisemos juntos los detalles
+                            antes de dar el proyecto por terminado.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 py-12 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-5xl rounded-2xl border border-brand-200 bg-white p-6 sm:p-8">
+                <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Un emprendimiento que recién empieza</p>
+                <p class="mt-3 text-lg leading-8 text-slate-700">
+                    Despegando tu web está dando sus primeros pasos. Por eso, preferimos
+                    conversar cada idea y dejar claro qué puedo ofrecer antes de tomar
+                    un compromiso sobre funciones, tiempos o presupuesto.
+                </p>
+            </div>
+        </section>
+
+        <section id="preguntas" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div class="mx-auto max-w-3xl">
+                <div class="mb-8">
+                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Preguntas</p>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+                        Algunas dudas que pueden surgir:
+                    </h2>
+                </div>
+
+                <div class="space-y-3">
+                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
+                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                            ¿Cuánto cuesta una página?
+                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-4 leading-7 text-slate-600">
+                            Depende de las secciones y funciones que necesites. Primero
+                            conversamos la idea y te paso el presupuesto antes de empezar.
+                        </p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
+                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                            ¿Cuánto tiempo lleva?
+                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-4 leading-7 text-slate-600">
+                            El plazo depende del tamaño del proyecto y del material que
+                            haya que preparar. Lo definimos antes de arrancar.
+                        </p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
+                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                            ¿Tengo que tener todo listo para consultar?
+                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </span>
+                        </summary>
+                        <p class="mt-4 leading-7 text-slate-600">
+                            No. Podés escribinos aunque tengas solo una idea. Después
+                            vemos qué información, textos e imágenes hacen falta.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="bg-brand-950 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-wider text-brand-300">Contacto</p>
+                    <h2 class="mt-3 font-display text-3xl font-extrabold sm:text-4xl">
+                        ¿Querés contarnos tu idea?
+                    </h2>
+                    <p class="mt-4 max-w-xl leading-7 text-blue-100">
+                        Estoy en Córdoba. Mandame un mensaje con lo que estás pensando
+                        y te respondo para que podamos charlarlo.
+                    </p>
+                    <a
+                        href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-brand-900 transition hover:bg-brand-100"
+                    >
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Escribime por WhatsApp
+                    </a>
+                </div>
+
+                <form id="contact-form" class="space-y-4 rounded-2xl bg-white p-6 text-slate-800 shadow-xl sm:p-8">
+                    <div>
+                        <label for="contact-name" class="mb-1 block text-sm font-semibold">Tu nombre</label>
+                        <input
+                            type="text"
+                            id="contact-name"
+                            name="name"
+                            required
+                            autocomplete="name"
+                            placeholder="¿Cómo te llamás?"
+                            class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="contact-info" class="mb-1 block text-sm font-semibold">Tu WhatsApp o correo</label>
+                        <input
+                            type="text"
+                            id="contact-info"
+                            name="contact"
+                            required
+                            placeholder="¿Cómo puedo responderte?"
+                            class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="contact-msg" class="mb-1 block text-sm font-semibold">¿Qué página necesitás?</label>
+                        <textarea
+                            id="contact-msg"
+                            name="message"
+                            rows="4"
+                            required
+                            placeholder="Contame brevemente qué tenés en mente"
+                            class="w-full resize-y rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-700 px-5 py-3.5 font-bold text-white transition hover:bg-brand-900"
+                    >
+                        Enviar por WhatsApp
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm" aria-hidden="true"></i>
+                    </button>
+                    <p class="text-xs leading-5 text-slate-500">
+                        El mensaje se abrirá en WhatsApp para que puedas enviarlo.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 px-4 py-6 text-center text-sm text-slate-300">
+        <p>&copy; 2026 Despegando tu web · Córdoba, Argentina</p>
+    </footer>
+
+    <a
+        href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-lg transition hover:scale-105 hover:bg-[#1ebe5d]"
+        aria-label="Escribime por WhatsApp"
+    >
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        const whatsappNumber = "5493573402239";
+        const menuButton = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", String(!isOpen));
+            mobileMenu.classList.toggle("hidden", isOpen);
+            menuButton.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+        });
+
+        document.querySelectorAll(".mobile-link").forEach(function (link) {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Abrir menú");
+            });
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("contact-name").value.trim();
+            const contact = document.getElementById("contact-info").value.trim();
+            const message = document.getElementById("contact-msg").value.trim();
+
+            const text = "Hola, soy " + name + ". Mi contacto es " + contact +
+                ". Quería consultar por una página web: " + message;
+            const whatsappUrl = "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(text);
+
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        });
+    </script>
+</body>
+</html>
+
