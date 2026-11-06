@@ -52,6 +52,28 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        .project-modal[hidden] { display: none; }
+        .project-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; }
+        .project-modal__backdrop { position: absolute; inset: 0; background: rgba(5, 17, 34, .78); backdrop-filter: blur(8px); }
+        .project-modal__panel { position: relative; z-index: 1; width: min(100%, 980px); max-height: min(88vh, 900px); overflow: auto; border: 1px solid rgba(255,255,255,.7); border-radius: 24px; background: #fff; box-shadow: 0 30px 100px rgba(0,0,0,.35); }
+        .project-modal__header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1.5rem 1.5rem 1rem; }
+        .project-modal__close { display:grid; width:42px; height:42px; flex:0 0 auto; place-items:center; border-radius:12px; background:#f1f5f9; color:#123B73; transition:background .2s, transform .2s; }
+        .project-modal__close:hover { background:#dbeafe; transform:rotate(90deg); }
+        .project-modal__content { padding:0 1.5rem 1.5rem; }
+        .project-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+        .project-gallery img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px; border:1px solid #e2e8f0; background:#f8fafc; }
+        .project-gallery__empty { display:grid; min-height:260px; place-items:center; padding:2rem; border:1px dashed #cbd5e1; border-radius:18px; background:linear-gradient(135deg,#f8fafc,#eff6ff); text-align:center; }
+        .project-gallery__empty i { display:grid; width:58px; height:58px; place-items:center; margin:0 auto 1rem; border-radius:18px; background:#dbeafe; color:#174B86; font-size:1.4rem; }
+        body.modal-open { overflow:hidden; }
+        @media (max-width:640px) {
+            .project-modal { padding:.5rem; }
+            .project-modal__panel { max-height:94vh; border-radius:18px; }
+            .project-modal__header { padding:1.1rem 1.1rem .75rem; }
+            .project-modal__content { padding:0 1.1rem 1.1rem; }
+            .project-gallery { grid-template-columns:1fr; }
+        }
+
     </style>
 </head>
 
@@ -356,7 +378,8 @@
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Carrito y pedidos</li>
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Panel admin</li>
                             </ul>
-                            <a href="https://purefragance.com/" target="_blank" rel="noopener noreferrer"
+                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="purefragance"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <a href="https://pure-fragance.com/" target="_blank" rel="noopener noreferrer"
                                class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
                                 Visitar tienda <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
                             </a>
@@ -386,9 +409,10 @@
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Seguimiento</li>
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Cuentas de clientes</li>
                             </ul>
-                            <a href="https://github.com/Electreer2005/Mattu" target="_blank" rel="noopener noreferrer"
+                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="mattu"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <a href="https://mattu-chi.vercel.app/" target="_blank" rel="noopener noreferrer"
                                class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
-                                Conocer el desarrollo <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                Visitar aplicación <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
                             </a>
                         </div>
                     </article>
@@ -416,9 +440,10 @@
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Reproductor</li>
                                 <li class="rounded-full bg-slate-100 px-3 py-1.5">Noticias</li>
                             </ul>
-                            <a href="https://github.com/Electreer2005/mdsports" target="_blank" rel="noopener noreferrer"
+                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="mdsports"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <a href="https://mdsports.vercel.app/" target="_blank" rel="noopener noreferrer"
                                class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
-                                Conocer el desarrollo <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                Visitar plataforma <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
                             </a>
                         </div>
                     </article>
@@ -432,6 +457,32 @@
                 </div>
             </div>
         </section>
+
+
+        <div id="project-gallery-modal" class="project-modal" hidden aria-hidden="true">
+            <div class="project-modal__backdrop" data-gallery-close></div>
+            <section class="project-modal__panel" role="dialog" aria-modal="true" aria-labelledby="project-gallery-title">
+                <header class="project-modal__header">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[.18em] text-brand-700">Galería del proyecto</p>
+                        <h2 id="project-gallery-title" class="mt-2 font-display text-2xl font-extrabold text-brand-950">Proyecto</h2>
+                        <p id="project-gallery-description" class="mt-2 max-w-2xl text-sm leading-6 text-slate-600"></p>
+                    </div>
+                    <button type="button" class="project-modal__close" data-gallery-close aria-label="Cerrar galería">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </header>
+                <div class="project-modal__content">
+                    <div id="project-gallery-images" class="project-gallery"></div>
+                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+                        <p class="text-xs text-slate-500">Las capturas se incorporan desde la carpeta <code>/Img/proyectos/</code>.</p>
+                        <a id="project-gallery-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-brand-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-950">
+                            Visitar proyecto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <section id="contacto" class="bg-brand-950 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
             <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
@@ -540,6 +591,85 @@
                 menuButton.setAttribute("aria-expanded", "false");
                 menuButton.setAttribute("aria-label", "Abrir menú");
             });
+        });
+
+
+        // Capturas reales: agregar las rutas de las imágenes dentro de cada array.
+        // Ejemplo: "/Img/proyectos/pure-fragance/home.webp"
+        const projectGalleries = {
+            purefragance: {
+                title: "PureFragance",
+                description: "Tienda online de perfumería. Galería de pantallas reales del catálogo, productos y proceso de compra.",
+                url: "https://pure-fragance.com/",
+                images: []
+            },
+            mattu: {
+                title: "Mattu",
+                description: "Sistema de gestión de pedidos para joyería. Galería de pantallas reales del panel y seguimiento de pedidos.",
+                url: "https://mattu-chi.vercel.app/",
+                images: []
+            },
+            mdsports: {
+                title: "MD Sports",
+                description: "Plataforma deportiva y multimedia. Galería de pantallas reales de radio, programas y noticias.",
+                url: "https://mdsports.vercel.app/",
+                images: []
+            }
+        };
+
+        const galleryModal = document.getElementById("project-gallery-modal");
+        const galleryTitle = document.getElementById("project-gallery-title");
+        const galleryDescription = document.getElementById("project-gallery-description");
+        const galleryImages = document.getElementById("project-gallery-images");
+        const galleryLink = document.getElementById("project-gallery-link");
+        let previousFocus = null;
+
+        function closeProjectGallery() {
+            galleryModal.hidden = true;
+            galleryModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+            if (previousFocus) previousFocus.focus();
+        }
+
+        document.querySelectorAll("[data-gallery-open]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const project = projectGalleries[button.dataset.galleryOpen];
+                if (!project) return;
+
+                previousFocus = button;
+                galleryTitle.textContent = project.title;
+                galleryDescription.textContent = project.description;
+                galleryLink.href = project.url;
+                galleryImages.replaceChildren();
+
+                if (project.images.length) {
+                    project.images.forEach(function (src, index) {
+                        const image = document.createElement("img");
+                        image.src = src;
+                        image.alt = project.title + " — captura " + (index + 1);
+                        image.loading = "lazy";
+                        galleryImages.appendChild(image);
+                    });
+                } else {
+                    const empty = document.createElement("div");
+                    empty.className = "project-gallery__empty";
+                    empty.innerHTML = '<div><i class="fa-regular fa-images" aria-hidden="true"></i><p class="font-display text-lg font-bold text-brand-950">Estamos preparando esta galería</p><p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600">Todavía no se cargaron capturas reales. Cuando agreguemos las imágenes del proyecto, van a aparecer acá.</p></div>';
+                    galleryImages.appendChild(empty);
+                }
+
+                galleryModal.hidden = false;
+                galleryModal.setAttribute("aria-hidden", "false");
+                document.body.classList.add("modal-open");
+                galleryModal.querySelector("[data-gallery-close].project-modal__close").focus();
+            });
+        });
+
+        galleryModal.querySelectorAll("[data-gallery-close]").forEach(function (element) {
+            element.addEventListener("click", closeProjectGallery);
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && !galleryModal.hidden) closeProjectGallery();
         });
 
         document.getElementById("contact-form").addEventListener("submit", function (event) {
