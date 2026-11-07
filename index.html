@@ -1,275 +1,189 @@
 <!DOCTYPE html>
 <html lang="es-AR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Páginas web para pymes, comercios y emprendimientos. Despegando tu web empieza en Córdoba: contame tu idea y la charlamos.">
+    <meta name="description"
+        content="Páginas web para pymes, comercios y emprendimientos. Despegando tu web empieza en Córdoba: contame tu idea y la charlamos.">
     <meta name="theme-color" content="#123B73">
     <title>Despegando tu web | Páginas web en Córdoba</title>
 
     <link rel="icon" href="/Img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"DM Sans"', 'sans-serif'],
-                        display: ['Manrope', 'sans-serif']
-                    },
-                    colors: {
-                        brand: {
-                            50: '#F1F7FD',
-                            100: '#DDEEFF',
-                            200: '#C6E1FA',
-                            300: '#9CC9F5',
-                            600: '#2D6FB7',
-                            700: '#1E5AA8',
-                            800: '#174B86',
-                            900: '#123B73',
-                            950: '#0B2340'
-                        }
-                    }
-                }
-            }
-        };
-    </script>
-    <style>
-        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-        body { font-family: "DM Sans", sans-serif; }
-        h1, h2, h3 { font-family: "Manrope", sans-serif; }
-        .mobile-menu-open { display: block; }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        .project-modal[hidden] { display: none; }
-        .project-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; }
-        .project-modal__backdrop { position: absolute; inset: 0; background: rgba(5, 17, 34, .78); backdrop-filter: blur(8px); }
-        .project-modal__panel { position: relative; z-index: 1; width: min(100%, 980px); max-height: min(88vh, 900px); overflow: auto; border: 1px solid rgba(255,255,255,.7); border-radius: 24px; background: #fff; box-shadow: 0 30px 100px rgba(0,0,0,.35); }
-        .project-modal__header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1.5rem 1.5rem 1rem; }
-        .project-modal__close { display:grid; width:42px; height:42px; flex:0 0 auto; place-items:center; border-radius:12px; background:#f1f5f9; color:#123B73; transition:background .2s, transform .2s; }
-        .project-modal__close:hover { background:#dbeafe; transform:rotate(90deg); }
-        .project-modal__content { padding:0 1.5rem 1.5rem; }
-        .project-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
-        .project-gallery img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px; border:1px solid #e2e8f0; background:#f8fafc; }
-        .project-gallery__empty { display:grid; min-height:260px; place-items:center; padding:2rem; border:1px dashed #cbd5e1; border-radius:18px; background:linear-gradient(135deg,#f8fafc,#eff6ff); text-align:center; }
-        .project-gallery__empty i { display:grid; width:58px; height:58px; place-items:center; margin:0 auto 1rem; border-radius:18px; background:#dbeafe; color:#174B86; font-size:1.4rem; }
-        body.modal-open { overflow:hidden; }
-        @media (max-width:640px) {
-            .project-modal { padding:.5rem; }
-            .project-modal__panel { max-height:94vh; border-radius:18px; }
-            .project-modal__header { padding:1.1rem 1.1rem .75rem; }
-            .project-modal__content { padding:0 1.1rem 1.1rem; }
-            .project-gallery { grid-template-columns:1fr; }
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-950">
-    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="#inicio" class="shrink-0" aria-label="Despegando tu web, ir al inicio">
-                <img
-                    src="/Img/Despegando%20tu%20web_%20logo%20azul.png"
-                    alt="Despegando tu web"
-                    width="180"
-                    class="w-36 sm:w-44"
-                >
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#inicio" class="header-logo" aria-label="Despegando tu web, ir al inicio">
+                <img src="/Img/Despegando%20tu%20web_%20logo%20azul.png" alt="Despegando tu web" width="180">
             </a>
 
-            <nav class="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex" aria-label="Navegación principal">
-                <a href="#inicio" class="transition hover:text-brand-700">Inicio</a>
-                <a href="#servicios" class="transition hover:text-brand-700">Servicios</a>
-                <a href="#proceso" class="transition hover:text-brand-700">Cómo trabajo</a>
-                <a href="#preguntas" class="transition hover:text-brand-700">Preguntas</a>
-                <a href="#trabajos" class="mobile-link block py-2 font-semibold text-slate-700">Trabajos</a>
-                <a href="#contacto" class="transition hover:text-brand-700">Contacto</a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Cómo trabajo</a>
+                <a href="#preguntas">Preguntas</a>
+                <a href="#trabajos">Trabajos</a>
+                <a href="#contacto">Contacto</a>
             </nav>
 
-            <a
-                href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hidden items-center gap-2 rounded-xl bg-brand-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-950 sm:flex"
-            >
+            <a href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                target="_blank" rel="noopener noreferrer" class="header-cta">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 Escribime
             </a>
 
-            <button
-                id="mobile-menu-btn"
-                type="button"
-                class="rounded-lg p-2 text-xl text-brand-900 hover:bg-brand-50 lg:hidden"
-                aria-label="Abrir menú"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-            >
+            <button id="mobile-menu-btn" type="button" class="mobile-menu-btn" aria-label="Abrir menú"
+                aria-controls="mobile-menu" aria-expanded="false">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
 
-        <nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-5 py-3 lg:hidden" aria-label="Navegación móvil">
-            <a href="#inicio" class="mobile-link block py-2 font-semibold text-slate-700">Inicio</a>
-            <a href="#servicios" class="mobile-link block py-2 font-semibold text-slate-700">Servicios</a>
-            <a href="#proceso" class="mobile-link block py-2 font-semibold text-slate-700">Cómo trabajamos</a>
-            <a href="#preguntas" class="mobile-link block py-2 font-semibold text-slate-700">Preguntas</a>
-            <a href="#contacto" class="mobile-link block py-2 font-semibold text-slate-700">Contacto</a>
-            <a
-                href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-2 flex items-center justify-center gap-2 rounded-xl bg-brand-900 px-4 py-3 font-bold text-white"
-            >
+        <nav id="mobile-menu" class="mobile-menu hidden" aria-label="Navegación móvil">
+            <a href="#inicio" class="mobile-link">Inicio</a>
+            <a href="#servicios" class="mobile-link">Servicios</a>
+            <a href="#proceso" class="mobile-link">Cómo trabajamos</a>
+            <a href="#preguntas" class="mobile-link">Preguntas</a>
+            <a href="#trabajos" class="mobile-link">Trabajos</a>
+            <a href="#contacto" class="mobile-link">Contacto</a>
+            <a href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                target="_blank" rel="noopener noreferrer" class="mobile-link-cta">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 Escribinos por WhatsApp
             </a>
         </nav>
     </header>
 
-    <main id="inicio" class="pt-20">
-        <section class="bg-gradient-to-b from-brand-50 to-white px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-            <div class="mx-auto max-w-5xl text-center">
-                <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-semibold text-brand-900">
-                    <i class="fa-solid fa-location-dot text-brand-700" aria-hidden="true"></i>
+    <main id="inicio">
+        <section class="section--hero">
+            <div class="hero-content">
+                <p class="hero-badge">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     Córdoba, Argentina
                 </p>
 
-                <h1 class="mx-auto max-w-4xl font-display text-4xl font-extrabold leading-tight tracking-tight text-brand-950 sm:text-5xl lg:text-6xl">
+                <h1 class="hero-title">
                     Una página web clara para mostrar lo que hacés
                 </h1>
 
-                <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                <p class="hero-lead">
                     Estamos empezando con Despegando tu web y quiero ayudar a pymes,
                     comercios y emprendimientos a tener su espacio en internet.
                     Si tenés una idea, contame y vemos cómo encararla.
                 </p>
 
-                <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-                    <a
-                        href="#contacto"
-                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-700 px-6 py-3.5 font-bold text-white shadow-lg shadow-brand-900/15 transition hover:-translate-y-0.5 hover:bg-brand-900"
-                    >
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn-primary">
                         Contanos tu idea
                         <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
-                    <a
-                        href="#servicios"
-                        class="inline-flex items-center justify-center rounded-xl border border-brand-200 bg-white px-6 py-3.5 font-bold text-brand-900 transition hover:bg-brand-50"
-                    >
+                    <a href="#servicios" class="btn-secondary">
                         Ver servicios
                     </a>
                 </div>
 
-                <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm text-slate-600">
-                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Páginas para negocios</span>
-                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Landing pages</span>
-                    <span class="rounded-full border border-slate-200 bg-white px-4 py-2">Diseño adaptable</span>
+                <div class="hero-tags">
+                    <span>Páginas para negocios</span>
+                    <span>Landing pages</span>
+                    <span>Diseño adaptable</span>
                 </div>
             </div>
         </section>
 
-        <section id="servicios" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div class="mx-auto max-w-7xl">
-                <div class="max-w-2xl">
-                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Servicios</p>
-                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
-                        ¿Qué tipo de página necesitás?
-                    </h2>
-                    <p class="mt-4 leading-7 text-slate-600">
+        <section id="servicios" class="section">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <p class="eyebrow">Servicios</p>
+                    <h2 class="section-title">¿Qué tipo de página necesitás?</h2>
+                    <p class="section-lead">
                         Cada negocio tiene algo distinto para contar. Podemos empezar
                         por una web sencilla y definir juntos qué secciones hacen falta.
                     </p>
                 </div>
 
-                <div class="mt-10 grid gap-5 md:grid-cols-3">
-                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                <div class="three-col-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
                             <i class="fa-regular fa-window-maximize" aria-hidden="true"></i>
                         </div>
-                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Página para tu negocio</h3>
-                        <p class="mt-3 leading-7 text-slate-600">
+                        <h3 class="card-title">Página para tu negocio</h3>
+                        <p class="card-text">
                             Un lugar para contar qué ofrecés, mostrar tus datos y facilitar
                             que tus clientes se pongan en contacto.
                         </p>
                     </article>
 
-                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                    <article class="service-card">
+                        <div class="service-icon">
                             <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
                         </div>
-                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Landing page</h3>
-                        <p class="mt-3 leading-7 text-slate-600">
+                        <h3 class="card-title">Landing page</h3>
+                        <p class="card-text">
                             Una página enfocada en presentar un servicio, producto,
                             promoción o evento.
                         </p>
                     </article>
 
-                    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-xl text-brand-800">
+                    <article class="service-card">
+                        <div class="service-icon">
                             <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                         </div>
-                        <h3 class="mt-5 font-display text-xl font-bold text-brand-950">Diseño adaptable</h3>
-                        <p class="mt-3 leading-7 text-slate-600">
+                        <h3 class="card-title">Diseño adaptable</h3>
+                        <p class="card-text">
                             La página se prepara para que se pueda leer y recorrer desde
                             el celular, la tablet o la computadora.
                         </p>
                     </article>
                 </div>
 
-                <p class="mt-6 text-sm text-slate-500">
+                <p class="section-note">
                     ¿Tenés otra idea? Escribinos y vemos juntos qué alcance puede tener.
                 </p>
             </div>
         </section>
 
-        <section id="proceso" class="bg-brand-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div class="mx-auto max-w-7xl">
-                <div class="max-w-2xl">
-                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Cómo trabajo</p>
-                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
-                        Primero hablamos; después, lo ponemos en marcha
-                    </h2>
-                    <p class="mt-4 leading-7 text-slate-600">
+        <section id="proceso" class="section section--process">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <p class="eyebrow">Cómo trabajo</p>
+                    <h2 class="section-title">Primero hablamos; después, lo ponemos en marcha</h2>
+                    <p class="section-lead">
                         La idea es que sepas qué incluye el proyecto, cuánto cuesta y
                         cuáles son los pasos antes de empezar.
                     </p>
                 </div>
 
-                <div class="mt-10 grid gap-5 md:grid-cols-3">
-                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
-                        <span class="text-sm font-extrabold text-brand-600">01</span>
-                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Me contás qué necesitás</h3>
-                        <p class="mt-2 leading-7 text-slate-600">
+                <div class="three-col-grid">
+                    <article class="process-card">
+                        <span class="process-step">01</span>
+                        <h3>Me contás qué necesitás</h3>
+                        <p>
                             Hablamos de tu negocio, qué querés mostrar y qué te gustaría
                             que puedan hacer quienes visiten la página.
                         </p>
                     </article>
 
-                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
-                        <span class="text-sm font-extrabold text-brand-600">02</span>
-                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Definimos el proyecto</h3>
-                        <p class="mt-2 leading-7 text-slate-600">
+                    <article class="process-card">
+                        <span class="process-step">02</span>
+                        <h3>Definimos el proyecto</h3>
+                        <p>
                             Acordamos las secciones, el contenido, el presupuesto y el
                             plazo antes de arrancar.
                         </p>
                     </article>
 
-                    <article class="rounded-2xl border border-brand-100 bg-white p-6">
-                        <span class="text-sm font-extrabold text-brand-600">03</span>
-                        <h3 class="mt-3 font-display text-lg font-bold text-brand-950">Revisamos la página</h3>
-                        <p class="mt-2 leading-7 text-slate-600">
+                    <article class="process-card">
+                        <span class="process-step">03</span>
+                        <h3>Revisamos la página</h3>
+                        <p>
                             Te compartimos el avance para que revisemos juntos los detalles
                             antes de dar el proyecto por terminado.
                         </p>
@@ -278,10 +192,10 @@
             </div>
         </section>
 
-        <section class="px-4 py-12 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-5xl rounded-2xl border border-brand-200 bg-white p-6 sm:p-8">
-                <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Un emprendimiento que recién empieza</p>
-                <p class="mt-3 text-lg leading-8 text-slate-700">
+        <section class="section section--note">
+            <div class="note-box">
+                <p class="eyebrow">Un emprendimiento que recién empieza</p>
+                <p class="note-text">
                     Despegando tu web está dando sus primeros pasos. Por eso, preferimos
                     conversar cada idea y dejar claro qué puedo ofrecer antes de tomar
                     un compromiso sobre funciones, tiempos o presupuesto.
@@ -289,50 +203,48 @@
             </div>
         </section>
 
-        <section id="preguntas" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-                <div class="mb-8">
-                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Preguntas</p>
-                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
-                        Algunas dudas que pueden surgir:
-                    </h2>
+        <section id="preguntas" class="section">
+            <div class="faq-inner">
+                <div class="faq-heading">
+                    <p class="eyebrow">Preguntas</p>
+                    <h2 class="section-title">Algunas dudas que pueden surgir:</h2>
                 </div>
 
-                <div class="space-y-3">
-                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
-                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>
                             ¿Cuánto cuesta una página?
-                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                            <span class="faq-icon">
                                 <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                             </span>
                         </summary>
-                        <p class="mt-4 leading-7 text-slate-600">
+                        <p>
                             Depende de las secciones y funciones que necesites. Primero
                             conversamos la idea y te paso el presupuesto antes de empezar.
                         </p>
                     </details>
 
-                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
-                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                    <details class="faq-item">
+                        <summary>
                             ¿Cuánto tiempo lleva?
-                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                            <span class="faq-icon">
                                 <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                             </span>
                         </summary>
-                        <p class="mt-4 leading-7 text-slate-600">
+                        <p>
                             El plazo depende del tamaño del proyecto y del material que
                             haya que preparar. Lo definimos antes de arrancar.
                         </p>
                     </details>
 
-                    <details class="group rounded-xl border border-slate-200 bg-white p-5">
-                        <summary class="cursor-pointer list-none font-bold text-brand-950">
+                    <details class="faq-item">
+                        <summary>
                             ¿Tengo que tener todo listo para consultar?
-                            <span class="float-right text-brand-700 transition group-open:rotate-180">
+                            <span class="faq-icon">
                                 <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                             </span>
                         </summary>
-                        <p class="mt-4 leading-7 text-slate-600">
+                        <p>
                             No. Podés escribinos aunque tengas solo una idea. Después
                             vemos qué información, textos e imágenes hacen falta.
                         </p>
@@ -341,132 +253,131 @@
             </div>
         </section>
 
-                <section id="trabajos" class="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div class="mx-auto max-w-7xl">
-                <div class="mx-auto max-w-3xl text-center">
-                    <p class="text-sm font-bold uppercase tracking-wider text-brand-700">Proyectos seleccionados</p>
-                    <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
-                        Soluciones reales para necesidades diferentes
-                    </h2>
-                    <p class="mt-4 leading-7 text-slate-600">
+        <section id="trabajos" class="section section--projects">
+            <div class="section-inner">
+                <div class="section-heading--center">
+                    <p class="eyebrow">Proyectos seleccionados</p>
+                    <h2 class="section-title">Soluciones reales para necesidades diferentes</h2>
+                    <p class="section-lead">
                         Estos proyectos muestran distintas formas de aprovechar la tecnología:
                         desde una tienda online hasta sistemas de gestión y plataformas de contenido.
                     </p>
                 </div>
 
-                <div class="mt-10 grid gap-6 lg:grid-cols-3">
-                    <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <div class="relative flex min-h-52 items-center justify-center overflow-hidden bg-gradient-to-br from-rose-950 via-red-900 to-amber-700 p-8 text-white">
-                            <div class="absolute -right-12 -top-16 h-52 w-52 rounded-full border border-white/15"></div>
-                            <div class="absolute -bottom-24 -left-12 h-64 w-64 rounded-full border border-white/10"></div>
-                            <div class="relative text-center">
-                                <i class="fa-solid fa-spray-can-sparkles text-5xl text-amber-200" aria-hidden="true"></i>
-                                <p class="mt-4 font-display text-2xl font-extrabold tracking-[0.18em]">PUREFRAGANCE</p>
-                                <p class="mt-1 text-xs uppercase tracking-[0.28em] text-rose-100">Perfumería online</p>
-                            </div>
-                            <span class="absolute left-4 top-4 rounded-full border border-white/25 bg-black/15 px-3 py-1 text-xs font-semibold text-white">Trabajo para cliente</span>
+                <div class="projects-grid">
+                    <!-- PROYECTO 1: PUREFRAGANCE -->
+                    <article class="project-card">
+                        <div class="project-visual project-visual--purefragance">
+                            <!-- ACA VA EL LOGO -->
+                            <img src="/Img/proyectos/Pure-Fragance/Logo.jpeg" alt="Logo de PureFragance"
+                                class="project-logo">
+                            <span class="project-badge">Trabajo para cliente</span>
                         </div>
-                        <div class="flex flex-1 flex-col p-6">
-                            <p class="text-xs font-bold uppercase tracking-wider text-brand-700">E-commerce · Perfumería</p>
-                            <h3 class="mt-2 font-display text-xl font-bold text-brand-950">PureFragance</h3>
-                            <p class="mt-3 flex-1 leading-7 text-slate-600">
+                        <div class="project-body">
+                            <p class="project-category">E-commerce · Perfumería</p>
+                            <h3 class="project-title">PureFragance</h3>
+                            <p class="project-description">
                                 Tienda online con catálogo de fragancias, fichas de productos,
                                 carrito, cuentas de usuario, pedidos y administración de la tienda.
                             </p>
-                            <ul class="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Catálogo</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Carrito y pedidos</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Panel admin</li>
+                            <ul class="project-tags">
+                                <li>Catálogo</li>
+                                <li>Carrito y pedidos</li>
+                                <li>Panel admin</li>
                             </ul>
-                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="purefragance"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <button type="button" class="project-gallery-btn" data-gallery-open="purefragance">
+                                <i class="fa-regular fa-images" aria-hidden="true"></i>
+                                Ver capturas del proyecto
+                            </button>
                             <a href="https://pure-fragance.com/" target="_blank" rel="noopener noreferrer"
-                               class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
-                                Visitar tienda <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                class="project-link">
+                                Visitar tienda <i class="fa-solid fa-arrow-up-right-from-square text-xs"
+                                    aria-hidden="true"></i>
                             </a>
                         </div>
                     </article>
 
-                    <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <div class="relative flex min-h-52 items-center justify-center overflow-hidden bg-gradient-to-br from-stone-950 via-amber-950 to-stone-700 p-8 text-white">
-                            <div class="absolute -right-10 -top-20 h-56 w-56 rounded-full border border-white/15"></div>
-                            <div class="absolute -bottom-24 -left-12 h-64 w-64 rounded-full border border-white/10"></div>
-                            <div class="relative text-center">
-                                <i class="fa-solid fa-gem text-5xl text-amber-200" aria-hidden="true"></i>
-                                <p class="mt-4 font-display text-3xl font-extrabold tracking-[0.2em]">MATTU</p>
-                                <p class="mt-1 text-xs uppercase tracking-[0.28em] text-amber-100">Gestión de pedidos</p>
-                            </div>
-                            <span class="absolute left-4 top-4 rounded-full border border-white/25 bg-black/15 px-3 py-1 text-xs font-semibold text-white">Trabajo para cliente</span>
+                    <!-- PROYECTO 2: MATTU -->
+                    <article class="project-card">
+                        <div class="project-visual project-visual--mattu">
+                            <!-- ACA VA EL LOGO -->
+                            <img src="/Img/proyectos/Mattu/logo.png" alt="Logo de Mattu" class="project-logo">
+                            <span class="project-badge">Trabajo para cliente</span>
                         </div>
-                        <div class="flex flex-1 flex-col p-6">
-                            <p class="text-xs font-bold uppercase tracking-wider text-brand-700">Sistema de gestión · Joyería</p>
-                            <h3 class="mt-2 font-display text-xl font-bold text-brand-950">Mattu</h3>
-                            <p class="mt-3 flex-1 leading-7 text-slate-600">
+                        <div class="project-body">
+                            <p class="project-category">Sistema de gestión · Joyería</p>
+                            <h3 class="project-title">Mattu</h3>
+                            <p class="project-description">
                                 Sistema personalizado para registrar solicitudes, organizar pedidos
                                 y permitir que los clientes consulten el estado de sus trabajos.
                             </p>
-                            <ul class="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Pedidos</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Seguimiento</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Cuentas de clientes</li>
+                            <ul class="project-tags">
+                                <li>Pedidos</li>
+                                <li>Seguimiento</li>
+                                <li>Cuentas de clientes</li>
                             </ul>
-                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="mattu"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <button type="button" class="project-gallery-btn" data-gallery-open="mattu">
+                                <i class="fa-regular fa-images" aria-hidden="true"></i>
+                                Ver capturas del proyecto
+                            </button>
                             <a href="https://mattu-chi.vercel.app/" target="_blank" rel="noopener noreferrer"
-                               class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
-                                Visitar aplicación <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                class="project-link">
+                                Visitar aplicación <i class="fa-solid fa-arrow-up-right-from-square text-xs"
+                                    aria-hidden="true"></i>
                             </a>
                         </div>
                     </article>
 
-                    <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <div class="relative flex min-h-52 items-center justify-center overflow-hidden bg-gradient-to-br from-brand-950 via-blue-900 to-cyan-800 p-8 text-white">
-                            <div class="absolute -right-12 -top-16 h-52 w-52 rounded-full border border-white/15"></div>
-                            <div class="absolute -bottom-24 -left-12 h-64 w-64 rounded-full border border-white/10"></div>
-                            <div class="relative text-center">
-                                <i class="fa-solid fa-radio text-5xl text-cyan-200" aria-hidden="true"></i>
-                                <p class="mt-4 font-display text-3xl font-extrabold tracking-[0.16em]">MD SPORTS</p>
-                                <p class="mt-1 text-xs uppercase tracking-[0.28em] text-blue-100">Deportes y radio online</p>
-                            </div>
-                            <span class="absolute left-4 top-4 rounded-full border border-white/25 bg-black/15 px-3 py-1 text-xs font-semibold text-white">Proyecto propio</span>
+                    <!-- PROYECTO 3: MD SPORTS -->
+                    <article class="project-card">
+                        <div class="project-visual project-visual--mdsports">
+                            <!-- ACA VA EL LOGO -->
+                            <img src="/Img/proyectos/MdSports/Logo.jpeg" alt="Logo de MD Sports" class="project-logo">
+                            <span class="project-badge">Proyecto propio</span>
                         </div>
-                        <div class="flex flex-1 flex-col p-6">
-                            <p class="text-xs font-bold uppercase tracking-wider text-brand-700">Plataforma web · Multimedia</p>
-                            <h3 class="mt-2 font-display text-xl font-bold text-brand-950">MD Sports</h3>
-                            <p class="mt-3 flex-1 leading-7 text-slate-600">
+                        <div class="project-body">
+                            <p class="project-category">Plataforma web · Multimedia</p>
+                            <h3 class="project-title">MD Sports</h3>
+                            <p class="project-description">
                                 Plataforma deportiva con radio en vivo, reproductor de audio,
                                 programas, noticias, secciones deportivas y programación.
                             </p>
-                            <ul class="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Radio online</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Reproductor</li>
-                                <li class="rounded-full bg-slate-100 px-3 py-1.5">Noticias</li>
+                            <ul class="project-tags">
+                                <li>Radio online</li>
+                                <li>Reproductor</li>
+                                <li>Noticias</li>
                             </ul>
-                            <button type="button" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-600 transition hover:text-brand-900" data-gallery-open="mdsports"><i class="fa-regular fa-images" aria-hidden="true"></i> Ver capturas del proyecto</button>
+                            <button type="button" class="project-gallery-btn" data-gallery-open="mdsports">
+                                <i class="fa-regular fa-images" aria-hidden="true"></i>
+                                Ver capturas del proyecto
+                            </button>
                             <a href="https://mdsports.vercel.app/" target="_blank" rel="noopener noreferrer"
-                               class="mt-6 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
-                                Visitar plataforma <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                class="project-link">
+                                Visitar plataforma <i class="fa-solid fa-arrow-up-right-from-square text-xs"
+                                    aria-hidden="true"></i>
                             </a>
                         </div>
                     </article>
                 </div>
 
-                <div class="mt-10 text-center">
-                    <p class="text-slate-600">¿Tenés un proyecto en mente?</p>
-                    <a href="#contacto" class="mt-2 inline-flex items-center gap-2 font-bold text-brand-700 transition hover:text-brand-950">
+                <div class="projects-cta">
+                    <p>¿Tenés un proyecto en mente?</p>
+                    <a href="#contacto">
                         Hablemos de tu idea <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-
         <div id="project-gallery-modal" class="project-modal" hidden aria-hidden="true">
             <div class="project-modal__backdrop" data-gallery-close></div>
-            <section class="project-modal__panel" role="dialog" aria-modal="true" aria-labelledby="project-gallery-title">
+            <section class="project-modal__panel" role="dialog" aria-modal="true"
+                aria-labelledby="project-gallery-title">
                 <header class="project-modal__header">
                     <div>
-                        <p class="text-xs font-bold uppercase tracking-[.18em] text-brand-700">Galería del proyecto</p>
-                        <h2 id="project-gallery-title" class="mt-2 font-display text-2xl font-extrabold text-brand-950">Proyecto</h2>
-                        <p id="project-gallery-description" class="mt-2 max-w-2xl text-sm leading-6 text-slate-600"></p>
+                        <p class="project-modal__label">Galería del proyecto</p>
+                        <h2 id="project-gallery-title">Proyecto</h2>
+                        <p id="project-gallery-description"></p>
                     </div>
                     <button type="button" class="project-modal__close" data-gallery-close aria-label="Cerrar galería">
                         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -474,84 +385,57 @@
                 </header>
                 <div class="project-modal__content">
                     <div id="project-gallery-images" class="project-gallery"></div>
-                    <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p class="text-xs text-slate-500">Las capturas se incorporan desde la carpeta <code>/Img/proyectos/</code>.</p>
-                        <a id="project-gallery-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-brand-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-950">
-                            Visitar proyecto <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                    <div class="project-modal__footer">
+                        <p>Las capturas se incorporan desde la carpeta <code>/Img/proyectos/</code>.</p>
+                        <a id="project-gallery-link" href="#" target="_blank" rel="noopener noreferrer">
+                            Visitar proyecto <i class="fa-solid fa-arrow-up-right-from-square text-xs"
+                                aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </section>
         </div>
 
-        <section id="contacto" class="bg-brand-950 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
-            <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+        <section id="contacto" class="section section--contact">
+            <div class="section-inner contact-inner">
                 <div>
-                    <p class="text-sm font-bold uppercase tracking-wider text-brand-300">Contacto</p>
-                    <h2 class="mt-3 font-display text-3xl font-extrabold sm:text-4xl">
-                        ¿Querés contarnos tu idea?
-                    </h2>
-                    <p class="mt-4 max-w-xl leading-7 text-blue-100">
+                    <p class="eyebrow">Contacto</p>
+                    <h2 class="section-title">¿Querés contarnos tu idea?</h2>
+                    <p class="contact-lead">
                         Estoy en Córdoba. Mandame un mensaje con lo que estás pensando
                         y te respondo para que podamos charlarlo.
                     </p>
-                    <a
-                        href="https://wa.me/5493573402239?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-brand-900 transition hover:bg-brand-100"
-                    >
+                    <a href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+                        target="_blank" rel="noopener noreferrer" class="contact-wa-btn">
                         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         Escribime por WhatsApp
                     </a>
                 </div>
 
-                <form id="contact-form" class="space-y-4 rounded-2xl bg-white p-6 text-slate-800 shadow-xl sm:p-8">
+                <form id="contact-form" class="contact-form">
                     <div>
-                        <label for="contact-name" class="mb-1 block text-sm font-semibold">Tu nombre</label>
-                        <input
-                            type="text"
-                            id="contact-name"
-                            name="name"
-                            required
-                            autocomplete="name"
-                            placeholder="¿Cómo te llamás?"
-                            class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
-                        >
+                        <label for="contact-name">Tu nombre</label>
+                        <input type="text" id="contact-name" name="name" required autocomplete="name"
+                            placeholder="¿Cómo te llamás?">
                     </div>
 
                     <div>
-                        <label for="contact-info" class="mb-1 block text-sm font-semibold">Tu WhatsApp o correo</label>
-                        <input
-                            type="text"
-                            id="contact-info"
-                            name="contact"
-                            required
-                            placeholder="¿Cómo puedo responderte?"
-                            class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
-                        >
+                        <label for="contact-info">Tu WhatsApp o correo</label>
+                        <input type="text" id="contact-info" name="contact" required
+                            placeholder="¿Cómo puedo responderte?">
                     </div>
 
                     <div>
-                        <label for="contact-msg" class="mb-1 block text-sm font-semibold">¿Qué página necesitás?</label>
-                        <textarea
-                            id="contact-msg"
-                            name="message"
-                            rows="4"
-                            required
-                            placeholder="Contame brevemente qué tenés en mente"
-                            class="w-full resize-y rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
-                        ></textarea>
+                        <label for="contact-msg">¿Qué página necesitás?</label>
+                        <textarea id="contact-msg" name="message" rows="4" required
+                            placeholder="Contame brevemente qué tenés en mente"></textarea>
                     </div>
 
-                    <button
-                        type="submit"
-                        class="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-700 px-5 py-3.5 font-bold text-white transition hover:bg-brand-900"
-                    >
+                    <button type="submit">
                         Enviar por WhatsApp
                         <i class="fa-solid fa-arrow-up-right-from-square text-sm" aria-hidden="true"></i>
                     </button>
-                    <p class="text-xs leading-5 text-slate-500">
+                    <p class="form-note">
                         El mensaje se abrirá en WhatsApp para que puedas enviarlo.
                     </p>
                 </form>
@@ -559,17 +443,12 @@
         </section>
     </main>
 
-    <footer class="bg-slate-950 px-4 py-6 text-center text-sm text-slate-300">
+    <footer class="site-footer">
         <p>&copy; 2026 Despegando tu web · Córdoba, Argentina</p>
     </footer>
 
-    <a
-        href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-lg transition hover:scale-105 hover:bg-[#1ebe5d]"
-        aria-label="Escribime por WhatsApp"
-    >
+    <a href="https://wa.me/5493764943233?text=Hola%2C%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web"
+        target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Escribime por WhatsApp">
         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -585,7 +464,7 @@
             menuButton.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
         });
 
-        document.querySelectorAll(".mobile-link").forEach(function (link) {
+        document.querySelectorAll(".mobile-link, .mobile-link-cta").forEach(function (link) {
             link.addEventListener("click", function () {
                 mobileMenu.classList.add("hidden");
                 menuButton.setAttribute("aria-expanded", "false");
@@ -593,27 +472,53 @@
             });
         });
 
-
-        // Capturas reales: agregar las rutas de las imágenes dentro de cada array.
-        // Ejemplo: "/Img/proyectos/pure-fragance/home.webp"
         const projectGalleries = {
             purefragance: {
                 title: "PureFragance",
                 description: "Tienda online de perfumería. Galería de pantallas reales del catálogo, productos y proceso de compra.",
                 url: "https://pure-fragance.com/",
-                images: []
+                images: [
+                    "/Img/proyectos/Pure-Fragance/Captura1.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura2.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura3.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura4.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura5.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura6.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura7.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura8.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura9.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura10.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura11.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura12.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura13.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura14.jpg",
+                    "/Img/proyectos/Pure-Fragance/Captura15.jpg"
+                ]
             },
             mattu: {
                 title: "Mattu",
                 description: "Sistema de gestión de pedidos para joyería. Galería de pantallas reales del panel y seguimiento de pedidos.",
                 url: "https://mattu-chi.vercel.app/",
-                images: []
+                images: [
+                    "/Img/proyectos/Mattu/Captura1.jpg",
+                    "/Img/proyectos/Mattu/Captura2.jpg",
+                    "/Img/proyectos/Mattu/Captura3.jpg",
+                    "/Img/proyectos/Mattu/Captura4.jpg",
+                    "/Img/proyectos/Mattu/Captura5.jpg"
+                ]
             },
             mdsports: {
                 title: "MD Sports",
                 description: "Plataforma deportiva y multimedia. Galería de pantallas reales de radio, programas y noticias.",
                 url: "https://mdsports.vercel.app/",
-                images: []
+                images: [
+                    "/Img/proyectos/MdSports/Captura1.jpg",
+                    "/Img/proyectos/MdSports/Captura2.jpg",
+                    "/Img/proyectos/MdSports/Captura3.jpg",
+                    "/Img/proyectos/MdSports/Captura4.jpg",
+                    "/Img/proyectos/MdSports/Captura5.jpg",
+                    "/Img/proyectos/MdSports/Captura6.jpg"
+                ]
             }
         };
 
@@ -653,7 +558,7 @@
                 } else {
                     const empty = document.createElement("div");
                     empty.className = "project-gallery__empty";
-                    empty.innerHTML = '<div><i class="fa-regular fa-images" aria-hidden="true"></i><p class="font-display text-lg font-bold text-brand-950">Estamos preparando esta galería</p><p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600">Todavía no se cargaron capturas reales. Cuando agreguemos las imágenes del proyecto, van a aparecer acá.</p></div>';
+                    empty.innerHTML = '<div><i class="fa-regular fa-images" aria-hidden="true"></i><p style="font-family: Manrope, sans-serif; font-size:1.125rem; font-weight:700; color:#0B2340;">Estamos preparando esta galería</p><p style="max-width:32rem; margin:0.5rem auto 0; font-size:0.875rem; line-height:1.5rem; color:#475569;">Todavía no se cargaron capturas reales. Cuando agreguemos las imágenes del proyecto, van a aparecer acá.</p></div>';
                     galleryImages.appendChild(empty);
                 }
 
@@ -686,8 +591,7 @@
 
             window.open(whatsappUrl, "_blank", "noopener,noreferrer");
         });
-
     </script>
 </body>
-</html>
 
+</html>
